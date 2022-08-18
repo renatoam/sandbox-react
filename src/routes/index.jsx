@@ -4,6 +4,7 @@ import Pokedex from "../fetching/Pokedex";
 import Home from "../Home";
 import ContentLayoutShift from "../image-optimization/ContentLayoutShift";
 import Parent from '../rendering/Parent'
+import B from "../rendering/B";
 
 function Lessons() {
   return (
@@ -24,7 +25,7 @@ export default function Routing() {
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
           <Route path="lessons" element={<Lessons />}>
-            <Route path="rendering" element={<Parent />} />
+            <Route path="rendering" element={<Parent><B/></Parent>} />
             <Route path="fetching" element={<Pokedex />} />
             <Route path="optimization" element={<ImageOptimization />}>
               <Route path="cls" element={<ContentLayoutShift />} />
