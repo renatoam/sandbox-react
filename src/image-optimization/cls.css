@@ -1,0 +1,9 @@
+picture, figure {
+  display: block;
+  width: 40rem;
+}
+
+picture img,
+figure img {
+  width: 100%;
+}
