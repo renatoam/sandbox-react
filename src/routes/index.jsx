@@ -2,16 +2,11 @@ import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import App from "../App";
 import Pokedex from "../fetching/Pokedex";
 import Home from "../Home";
+import ImageOptimization from "../image-optimization";
 import ContentLayoutShift from "../image-optimization/ContentLayoutShift";
 import Parent from '../rendering/Parent'
 
 function Lessons() {
-  return (
-    <Outlet />
-  )
-}
-
-function ImageOptimization() {
   return (
     <Outlet />
   )
