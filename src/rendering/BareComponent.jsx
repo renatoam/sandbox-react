@@ -1,16 +1,16 @@
-export default function BareComponent() {
+import { memo } from 'react'
+
+function BareComponent({ myObject, myFunction }) {
+// function BareComponent() {
   return (
-    <p
-      style={{
-        height: 40,
-        width: 40,
-        display: "grid",
-        placeContent: "center",
-        border: "1px solid",
-        borderRadius: 10
-      }}
-    >
+    <section onClick={myFunction}>
+     {/* <section> */}
       Bare Component
-    </p>
+      <br />
+      {myObject.value && myObject.value}
+    </section>
   )
 }
+
+// export default BareComponent
+export default memo(BareComponent)

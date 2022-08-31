@@ -1,8 +1,8 @@
 import { memo } from 'react' 
 
-function MemoComponent() {
+function MemoComponent({ name }) {
   return (
-    <p>Memo Component</p>
+    <p>Memo Component {name}</p>
   )
 }
 

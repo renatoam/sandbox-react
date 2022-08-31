@@ -1,0 +1,17 @@
+// Shallow Comparison
+const firstEmptyObject = {}
+const secondEmptyObject = {}
+
+console.log('Comparing Refs [Object.is]: ', Object.is(firstEmptyObject, secondEmptyObject))
+console.log('Comparing Refs [3 equals]: ', firstEmptyObject === secondEmptyObject)
+console.log('Comparing Refs [2 equals]: ', firstEmptyObject == secondEmptyObject)
+
+// Shallow Equality
+const firstObjectWithProps = { name: '', age: '' }
+const secondObjectWithProps = { name: '', age: '' }
+const shallowEquality = Object.keys(firstObjectWithProps).every(key => secondObjectWithProps.hasOwnProperty(key))
+
+console.log('Comparing Props', shallowEquality)
+
+const name = 'Renato'
+const fullName = { any: 'Tananina' } // tag/reference

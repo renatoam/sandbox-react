@@ -1,47 +1,31 @@
-import { useCallback, useMemo, useState } from "react";
-import A from "./A";
-import B from "./B";
+import { useState, useCallback, useMemo } from "react";
 import BareComponent from "./BareComponent";
-import MemoComponent from "./MemoComponent";
-import PropsComponent from "./PropsComponent";
+
+const myObject = { value: 'My value' }
+const myFunction = () => console.log('Hello, there!')
 
 export default function Parent({ children }) {
   const [parentState, setParentState] = useState(false)
-  const [count, setCount] = useState(0)
 
-  // const obj = useMemo(() => ({}), [])
-  // const func = useCallback(() => 'Hello, there!', [])
-
-  // Shallow Comparison
-  // Object.is({}, {})
-  // {} === {}
-  // {} == {}
-
-  // Shallow Equality
-  // const obj1 = { name: '', age: '' }
-  // const obj2 = { name: '', age: '' }
-  // Object.keys(obj1).every(key => obj2.hasOwnProperty(key))
+  const myObject = { value: 'My value' }
+  const myFunction = () => console.log('Hello, there!')
+  // const myObject = useMemo(() => ({ value: 'My value' }), [])
+  // const myFunction = useCallback(() => console.log('Hello, there!'), [])
 
   return (
-    <section>
-      <article style={{ display: "flex", gap: 20, padding: 20 }}>
-        <BareComponent />
-        <PropsComponent />
-        <MemoComponent />
-        <A />
-        <B />
-
+    <section className="parent">
+      <h2>Parent Component</h2>
+      <article className="rendering">
+        {/* <BareComponent /> */}
+        <BareComponent myObject={myObject} myFunction={myFunction} />
+        {children}
       </article>
-      <section id="actions">
+      <section className="actions">
         <button
           onClick={() => setParentState(!parentState)}>
             Force parent render
         </button>
       </section>
-      {/* <button onClick={() => setCount(count+1)}>Force A render</button> */}
-      {/* <A obj={obj} func={func} /> */}
-      {/* <A>{count}</A> */}
-      {/* {children} */}
     </section>
   )
 }

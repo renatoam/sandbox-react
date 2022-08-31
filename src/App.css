@@ -44,3 +44,57 @@
 .read-the-docs {
   color: #888;
 }
+
+.parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.rendering {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;width: 100%;
+}
+
+.rendering > * {
+  flex: 1 1 300px;
+  display: grid;
+  place-content: center;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  min-height: 200px;
+}
+
+@media (prefers-color-scheme: light) {
+  .rendering > * {
+    border-color: #484747;
+  }
+}
+
+.rendering + .actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.rendering + .actions button {
+  background-color: #ffffff;
+  border: 2px solid #484747;
+  color: #484747;
+  transition: all .4s ease-in-out;
+}
+
+.rendering + .actions button:hover {
+  background-color: #484747;
+  color: #ffffff;
+}
+
+.children {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
